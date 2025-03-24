@@ -14,7 +14,8 @@ then it used the js methods ".indexOf()" and ".substring()".
     - console.log(nickName);
     - //this will return "john in the console"
 
-  then it check is something is on that line using an if statement with the condition of "(line.indexOf("thing you are  searching for") != -1)"
+  then it check is something is on that line using an if statement with the condition of 
+  "(line.indexOf("thing you are  searching for") != -1)"
 
 
 
