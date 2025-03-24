@@ -4,9 +4,10 @@ a "coding lang" made in js takes in a large string and uses a function to compil
 
 
 
-//s(i0(-1)) ||sio -1
+# "s(i0(-1))" or "sio -1"
+Pronounced "See-oh negative one" || "SEE-oh NEG-uh-tiv WUHN" || /ˈsiː.oʊ ˈnɛɡ.ə.tɪv wʌn/ 
 
-/*
+
 Variables: A way to store and reference data.
 Data Types: Definitions for different kinds of data (e.g., integers, floats, strings).
 Control Structures: These include conditionals (if/else), loops (for, while), and case switches to control the flow of a program.
@@ -15,16 +16,26 @@ Operators: Symbols used for operations like addition (+), subtraction (-), equal
 Comments: Notations for human-readable explanations in code, often ignored by the compiler or interpreter.
 Syntax Rules: A set of grammar rules that define how the language's code must be structured.
 
---put an x after if done
+# put an x after if done
+
 Variables - x
+
 Data Types - x
+
 Operators - x
+
 Comments - x
+
 Syntax Rules - x
+
 Input - 
 
---final boss(es)???
+
+# final boss(es)???
+
 classes - 
+
 Control Structures - 
+
 Functions/Methods - 
-*/
+
