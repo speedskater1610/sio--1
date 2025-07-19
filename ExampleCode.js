@@ -57,7 +57,7 @@ let bunchOfThingsSioM1CanDo1 =
     log.ln(4);
     prpt $userName = (what is your name? );
     ??sleep for a 1/4 sec before saying hello;
-    log.Sleep(0.5);
+    log.Sleep(0.25);
     
     ??say hello and then the name the user entered;
     log.Out.Str(well hello then );
@@ -98,4 +98,22 @@ run **Main**() {;
     log.Out.Var($sumNum1Num2);
 };
 
+`
+
+
+let if_and_while = `
+run **Main**() {;
+    ?? make a var called var and assign 5 then check if it is 5 and print equ is they are equ
+    int $var = (5);
+    if ($var == 5) {
+        log.Out.Str("Equal");
+    };
+
+    ?? make a var x and assign 0 then loops through to 3 inc $x and p[riinting its value
+    int $x = (0); 
+    while ($x < 3) {
+        log.Out.Int($x);
+        $x = ($x + 1);
+    };
+};
 `
