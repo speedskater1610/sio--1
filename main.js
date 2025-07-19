@@ -2,6 +2,22 @@
 let code = ``;
 
 
+// to evaluate for if statemnts
+function evaluateCondition(condStr) {
+    // Basic: replace var names with values
+    condStr = condStr.replace(/\$\w+/g, (match) => {
+        let val = lookUpVarName(match);
+        return val !== null ? val : "undefined";
+    });
+
+    try {
+        return eval(condStr);
+    } catch (e) {
+        console.log("ERROR: Invalid condition: " + condStr);
+        return false;
+    }
+}
+
 //the function to compile code
 async function complier (code) {
     let amountLines = (code.split(';').length-1);
@@ -37,6 +53,46 @@ async function complier (code) {
         if (line.indexOf("??") != -1) {
             continue;
         } else
+
+        // IF Statement
+        if (line.startsWith("if (")) {
+            let condition = line.substring(3, line.indexOf(")")).trim();
+            let block = [];
+
+            // Collect block between { and }
+            i++;
+            while (i < lines.length && lines[i] !== "}") {
+                block.push(lines[i]);
+                i++;
+            }
+
+            if (evaluateCondition(condition)) {
+                for (let innerLine of block) {
+                    await complier(innerLine + ";");
+                }
+            }
+            continue;
+        } else 
+
+        // WHILE Loop
+        if (line.startsWith("while (")) {
+            let condition = line.substring(6, line.indexOf(")")).trim();
+            let block = [];
+
+            // Collect block between { and }
+            i++;
+            while (i < lines.length && lines[i] !== "}") {
+                block.push(lines[i]);
+                i++;
+            }
+
+            while (evaluateCondition(condition)) {
+                for (let innerLine of block) {
+                    await complier(innerLine + ";");
+                }
+            }
+            continue;
+        } else 
         
         //new line
         if (line.indexOf("log.ln") != -1) {
